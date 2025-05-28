@@ -1,0 +1,61 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int main() {
+    int num = 7;
+
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
+
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : int
+IDENTIFIER                : num
+ASSIGNMENT                : =
+INTEGER                   : 7
+SEMICOLON                 : ;
+KEYWORD                   : if
+LPAREN                    : (
+IDENTIFIER                : num
+ARITH_OP                  : %
+INTEGER                   : 2
+REL_OP                    : ==
+INTEGER                   : 0
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "%d is even.\n"
+COMMA                     : ,
+IDENTIFIER                : num
+RPAREN                    : )
+SEMICOLON                 : ;
+RBRACE                    : }
+IDENTIFIER                : else
+LBRACE                    : {
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "%d is odd.\n"
+COMMA                     : ,
+IDENTIFIER                : num
+RPAREN                    : )
+SEMICOLON                 : ;
+RBRACE                    : }
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+7 is odd.

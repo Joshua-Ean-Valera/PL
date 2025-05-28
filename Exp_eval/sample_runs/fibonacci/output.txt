@@ -1,0 +1,93 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int main() {
+    int n = 10, a = 0, b = 1, next;
+    printf("Fibonacci sequence:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    printf("\n");
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : int
+IDENTIFIER                : n
+ASSIGNMENT                : =
+INTEGER                   : 10
+COMMA                     : ,
+IDENTIFIER                : a
+ASSIGNMENT                : =
+INTEGER                   : 0
+COMMA                     : ,
+IDENTIFIER                : b
+ASSIGNMENT                : =
+INTEGER                   : 1
+COMMA                     : ,
+IDENTIFIER                : next
+SEMICOLON                 : ;
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Fibonacci sequence:\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : for
+LPAREN                    : (
+KEYWORD                   : int
+IDENTIFIER                : i
+ASSIGNMENT                : =
+INTEGER                   : 0
+SEMICOLON                 : ;
+IDENTIFIER                : i
+REL_OP                    : <
+IDENTIFIER                : n
+SEMICOLON                 : ;
+IDENTIFIER                : i
+UNARY_OP                  : ++
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "%d "
+COMMA                     : ,
+IDENTIFIER                : a
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : next
+ASSIGNMENT                : =
+IDENTIFIER                : a
+ARITH_OP                  : +
+IDENTIFIER                : b
+SEMICOLON                 : ;
+IDENTIFIER                : a
+ASSIGNMENT                : =
+IDENTIFIER                : b
+SEMICOLON                 : ;
+IDENTIFIER                : b
+ASSIGNMENT                : =
+IDENTIFIER                : next
+SEMICOLON                 : ;
+RBRACE                    : }
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+Fibonacci sequence:
+0 1 1 2 3 5 8 13 21 34

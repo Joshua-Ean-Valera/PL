@@ -1,0 +1,72 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0) return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num = 5;
+    printf("Factorial of %d is %d\n", num, factorial(num));
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : factorial
+LPAREN                    : (
+KEYWORD                   : int
+IDENTIFIER                : n
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : if
+LPAREN                    : (
+IDENTIFIER                : n
+REL_OP                    : ==
+INTEGER                   : 0
+RPAREN                    : )
+KEYWORD                   : return
+INTEGER                   : 1
+SEMICOLON                 : ;
+KEYWORD                   : return
+IDENTIFIER                : n
+ARITH_OP                  : *
+IDENTIFIER                : factorial
+LPAREN                    : (
+IDENTIFIER                : n
+ARITH_OP                  : -
+INTEGER                   : 1
+RPAREN                    : )
+SEMICOLON                 : ;
+RBRACE                    : }
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : int
+IDENTIFIER                : num
+ASSIGNMENT                : =
+INTEGER                   : 5
+SEMICOLON                 : ;
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Factorial of %d is %d\n"
+COMMA                     : ,
+IDENTIFIER                : num
+COMMA                     : ,
+IDENTIFIER                : factorial
+LPAREN                    : (
+IDENTIFIER                : num
+RPAREN                    : )
+RPAREN                    : )
+SEMICOLON                 : ;
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+Factorial of 5 is 120

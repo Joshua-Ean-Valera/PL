@@ -1,0 +1,52 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("Number: %d\n", i);
+    }
+
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : for
+LPAREN                    : (
+KEYWORD                   : int
+IDENTIFIER                : i
+ASSIGNMENT                : =
+INTEGER                   : 1
+SEMICOLON                 : ;
+IDENTIFIER                : i
+REL_OP                    : <=
+INTEGER                   : 5
+SEMICOLON                 : ;
+IDENTIFIER                : i
+UNARY_OP                  : ++
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Number: %d\n"
+COMMA                     : ,
+IDENTIFIER                : i
+RPAREN                    : )
+SEMICOLON                 : ;
+RBRACE                    : }
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5

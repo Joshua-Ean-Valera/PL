@@ -1,0 +1,80 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int main() {
+    int day = 3;
+
+    switch (day) {
+        case 1: printf("Monday\n"); break;
+        case 2: printf("Tuesday\n"); break;
+        case 3: printf("Wednesday\n"); break;
+        default: printf("Invalid day\n"); break;
+    }
+
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : int
+IDENTIFIER                : day
+ASSIGNMENT                : =
+INTEGER                   : 3
+SEMICOLON                 : ;
+IDENTIFIER                : switch
+LPAREN                    : (
+IDENTIFIER                : day
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : case
+INTEGER                   : 1
+COLON                     : :
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Monday\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : break
+SEMICOLON                 : ;
+IDENTIFIER                : case
+INTEGER                   : 2
+COLON                     : :
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Tuesday\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : break
+SEMICOLON                 : ;
+IDENTIFIER                : case
+INTEGER                   : 3
+COLON                     : :
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Wednesday\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : break
+SEMICOLON                 : ;
+IDENTIFIER                : default
+COLON                     : :
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Invalid day\n"
+RPAREN                    : )
+SEMICOLON                 : ;
+IDENTIFIER                : break
+SEMICOLON                 : ;
+RBRACE                    : }
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+Wednesday

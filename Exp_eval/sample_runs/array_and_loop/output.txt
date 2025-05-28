@@ -1,0 +1,77 @@
+=== Input Source Code ===
+#include <stdio.h>
+
+int main() {
+    int nums[5] = {10, 20, 30, 40, 50};
+
+    for (int i = 0; i < 5; i++) {
+        printf("Element %d: %d\n", i, nums[i]);
+    }
+
+    return 0;
+}
+
+=== Lexical Tokenization Output ===
+PREPROCESSOR_DIRECTIVE    : #include <stdio.h>
+KEYWORD                   : int
+IDENTIFIER                : main
+LPAREN                    : (
+RPAREN                    : )
+LBRACE                    : {
+KEYWORD                   : int
+IDENTIFIER                : nums
+LBRACKET                  : [
+INTEGER                   : 5
+RBRACKET                  : ]
+ASSIGNMENT                : =
+LBRACE                    : {
+INTEGER                   : 10
+COMMA                     : ,
+INTEGER                   : 20
+COMMA                     : ,
+INTEGER                   : 30
+COMMA                     : ,
+INTEGER                   : 40
+COMMA                     : ,
+INTEGER                   : 50
+RBRACE                    : }
+SEMICOLON                 : ;
+IDENTIFIER                : for
+LPAREN                    : (
+KEYWORD                   : int
+IDENTIFIER                : i
+ASSIGNMENT                : =
+INTEGER                   : 0
+SEMICOLON                 : ;
+IDENTIFIER                : i
+REL_OP                    : <
+INTEGER                   : 5
+SEMICOLON                 : ;
+IDENTIFIER                : i
+UNARY_OP                  : ++
+RPAREN                    : )
+LBRACE                    : {
+IDENTIFIER                : printf
+LPAREN                    : (
+STRING                    : "Element %d: %d\n"
+COMMA                     : ,
+IDENTIFIER                : i
+COMMA                     : ,
+IDENTIFIER                : nums
+LBRACKET                  : [
+IDENTIFIER                : i
+RBRACKET                  : ]
+RPAREN                    : )
+SEMICOLON                 : ;
+RBRACE                    : }
+KEYWORD                   : return
+INTEGER                   : 0
+SEMICOLON                 : ;
+RBRACE                    : }
+
+=== Semantic Execution Output ===
+Element 0: 10
+Element 1: 20
+Element 2: 30
+Element 3: 40
+Element 4: 50
